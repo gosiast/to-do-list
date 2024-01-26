@@ -28,9 +28,19 @@ form input,
 form button {
 	padding: 0.5rem;
 	font-size: 2rem;
-	border-color: black;
+	border-radius: 10px;
+	border-color: none;
 	background-color: white;
 }
-button {
+form button {
 	margin: 10px;
+	color: white;
+	background-color: #5cadfe;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+form button:hover {
+	color: #5cadfe;
+	background-color: white;
 }
