@@ -85,3 +85,7 @@ li {
 .complete-btn {
 	background-color: green;
 }
+
+.todo-item {
+	padding: 0.1rem;
+}
