@@ -14,6 +14,7 @@ body {
 
 header {
 	font-size: 1.5rem;
+	font-weight: bold;
 }
 
 header,
@@ -23,7 +24,16 @@ form {
 	justify-content: center;
 	align-items: center;
 }
-
+header,
+form button {
+	background: rgb(0, 9, 36);
+	background: linear-gradient(
+		47deg,
+		rgba(0, 9, 36, 1) 16%,
+		rgba(9, 9, 121, 1) 36%,
+		rgba(0, 212, 255, 1) 100%
+	);
+}
 form input,
 form button {
 	padding: 0.5rem;
@@ -31,18 +41,17 @@ form button {
 	border-radius: 10px;
 	border-color: none;
 	background-color: white;
+	border: none;
 }
 form button {
 	margin: 10px;
 	color: white;
-	background-color: #5cadfe;
 	cursor: pointer;
 	transition: all 0.3s ease;
 }
 
 form button:hover {
-	color: #5cadfe;
-	background-color: white;
+	box-shadow: 5px 1px 10px 5px rgba(0, 0, 0, 0.8);
 }
 
 .todo-container {
