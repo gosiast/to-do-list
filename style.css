@@ -57,9 +57,24 @@ form button:hover {
 }
 
 .todo {
+	display: flex; /*all items display one next to another*/
 	margin: 0.5rem;
 	background-color: white;
 	color: black;
 	padding: 0.5rem;
 	border-radius: 10px;
+	justify-content: space-between;
+	align-items: center;
+}
+
+li {
+	flex: 1; /*it pushed the button icons to the right and next to each other*/
+}
+
+.trash-btn,
+.complete-btn {
+	padding: 0.3rem;
+	margin: 0.2rem;
+	background-color: rgb(6, 72, 105);
+	color: white;
 }
