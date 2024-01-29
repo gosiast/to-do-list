@@ -116,3 +116,9 @@ li {
 	text-decoration: line-through;
 	opacity: 0.5;
 }
+
+/*animation of falling element*/
+.fall {
+	transform: translate(8rem) rotateZ(20deg);
+	opacity: 0;
+}

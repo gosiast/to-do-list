@@ -50,7 +50,8 @@ function deleteCheck(e) {
 	//delete todo item
 	if (item.classList[0] === "trash-btn") {
 		const todo = item.parentElement; //so we grab the entire element
-		todo.remove(); //it deletes the item when clicked trash
+		//Animation
+		todo.classList.add("fall");
 	}
 
 	//check mark , what happens when clicked
