@@ -52,4 +52,10 @@ function deleteCheck(e) {
 		const todo = item.parentElement; //so we grab the entire element
 		todo.remove(); //it deletes the item when clicked trash
 	}
+
+	//check mark , what happens when clicked
+	if (item.classList[0] === "complete-btn") {
+		const todo = item.parentElement;
+		todo.classList.toggle("completed");
+	}
 }

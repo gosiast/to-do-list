@@ -80,6 +80,7 @@ form button:hover {
 	border-radius: 10px;
 	justify-content: space-between;
 	align-items: center;
+	transition: all 0.5s ease;
 }
 
 li {
@@ -108,4 +109,10 @@ li {
 .fa-trash,
 .fa-check {
 	pointer-events: none;
+}
+
+/*we added this class, so had to style it now*/
+.completed {
+	text-decoration: line-through;
+	opacity: 0.5;
 }
