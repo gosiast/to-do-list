@@ -47,11 +47,16 @@ function addTodo(event) {
 //e = event
 function deleteCheck(e) {
 	const item = e.target;
+
 	//delete todo item
 	if (item.classList[0] === "trash-btn") {
 		const todo = item.parentElement; //so we grab the entire element
 		//Animation
 		todo.classList.add("fall");
+		//added special event listener so the item will be removed as well
+		todo.addEventListener("transitioned", function () {
+			todo.remove();
+		});
 	}
 
 	//check mark , what happens when clicked
