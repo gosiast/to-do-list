@@ -131,3 +131,25 @@ select {
 	outline: none;
 	border: none;
 }
+
+/*this is the div*/
+.select {
+	margin: 4rem;
+	position: relative; /*using position: relative; keeps the element in the flow, it just moves the element position but physically it reserves space in the flow*/
+	overflow: hidden;
+}
+
+select {
+	color: #273494;
+	width: 10rem;
+	cursor: pointer;
+	padding: 10px;
+}
+
+.select::after {
+	content: "\25BC"; /*added a cursor*/
+	position: absolute;
+	background-color: rgb(18, 113, 245);
+	top: 0;
+	right: 0;
+}
