@@ -98,3 +98,8 @@ li {
 .todo-item {
 	padding: 0.1rem;
 }
+
+.fa-trash,
+.fa-check {
+	pointer-events: none;
+}
