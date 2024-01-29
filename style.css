@@ -44,7 +44,7 @@ form input,
 form button {
 	padding: 0.5rem;
 	font-size: 2rem;
-	border-radius: 10px;
+	border-radius: 1px;
 	border-color: none;
 	background-color: white;
 	border: none;
@@ -121,4 +121,13 @@ li {
 .fall {
 	transform: translate(8rem) rotateZ(20deg);
 	opacity: 0;
+}
+
+/*styling the select element*/
+select {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	outline: none;
+	border: none;
 }
