@@ -7,6 +7,7 @@ const todoList = document.querySelector(".todo-list");
 const filterOption = document.querySelector(".filter-todo");
 
 //EVENT LISTENERS
+document.addEventListener("DOMContentLoaded", getTodos);
 todoButton.addEventListener("click", addTodo);
 //we will listen to what are we clicking on
 //we will execude a different function when we want to delete an item
@@ -113,4 +114,40 @@ function saveLocalTodos(todo) {
 	localStorage.setItem("todos", JSON.stringify(todos)); //pushing it back to the local storage
 	//The JSON.stringify() static method converts a JavaScript value to a JSON string, optionally replacing values
 	//if a replacer function is specified or optionally including only the specified properties if a replacer array is specified.
+}
+
+function getTodos() {
+	let todos;
+	if (localStorage.getItem("todos") === null) {
+		todos = []; // if it doesn't exist, i create an empty array
+	} else {
+		todos = JSON.parse(localStorage.getItem("todos")); //JSON parsing is the process of converting a JSON object in text format to a JS
+		//object that can be used inside a program. In JS, the standard way to do this is by using the method JSON.parse(), as the JS standard specifies.
+	}
+	//looping through
+	todos.forEach(function (todo) {
+		// todo div
+		const todoDiv = document.createElement("div");
+		todoDiv.classList.add("todo");
+
+		//create li
+		const newTodo = document.createElement("li");
+		newTodo.innerText = todo;
+		newTodo.classList.add("todo-item");
+		todoDiv.appendChild(newTodo);
+		//check mark button
+		const completedButton = document.createElement("button");
+		completedButton.innerHTML = '<i class="fas fa-check"></i>';
+		completedButton.classList.add("complete-btn");
+		todoDiv.appendChild(completedButton);
+
+		//check trash button
+		const trashButton = document.createElement("button");
+		trashButton.innerHTML = '<i class="fa-solid fa-trash"></i>';
+		trashButton.classList.add("trash-btn");
+		todoDiv.appendChild(trashButton);
+
+		//append to list
+		todoList.appendChild(todoDiv);
+	});
 }
