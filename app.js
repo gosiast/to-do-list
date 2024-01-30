@@ -57,8 +57,9 @@ function deleteCheck(e) {
 	//delete todo item
 	if (item.classList[0] === "trash-btn") {
 		const todo = item.parentElement; //so we grab the entire element
-		//Animation
+		//Animation of falling
 		todo.classList.add("fall");
+		removeLocalTodos(todo);
 		//added special event listener so the item will be removed as well
 		todo.addEventListener("transitioned", function () {
 			todo.remove();
@@ -150,4 +151,15 @@ function getTodos() {
 		//append to list
 		todoList.appendChild(todoDiv);
 	});
+}
+
+function removeLocalTodos(todo) {
+	let todos;
+	if (localStorage.getItem("todos") === null) {
+		todos = [];
+	} else {
+		todos = JSON.parse(localStorage.getItem("todos"));
+	}
+	const todoIntex = todo.children[0].innerText;
+	todo.splice(todo.indexOf(todoIndex), 1);
 }
