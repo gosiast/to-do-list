@@ -95,3 +95,19 @@ function filterTodo(e) {
 		}
 	});
 }
+
+//storing to local
+function saveLocalTodos(todo) {
+	//checking - hey do i already have todos stored?
+	let todos;
+	if (localStorage.getItem("todos") === null) {
+		todos = []; // if it doesn't exist, i create an empty array
+	} else {
+		todos = JSON.parse(localStorage.getItem("todos")); //JSON parsing is the process of converting a JSON object in text format to a JS
+		//object that can be used inside a program. In JS, the standard way to do this is by using the method JSON.parse(), as the JS standard specifies.
+	}
+	todos.push(todo); //The push() method adds new items to the end of an array
+	localStorage.setItem("todos", JSON.stringify(todos)); //pushing it back to the local storage
+	//The JSON.stringify() static method converts a JavaScript value to a JSON string, optionally replacing values
+	//if a replacer function is specified or optionally including only the specified properties if a replacer array is specified.
+}
