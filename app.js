@@ -6,14 +6,14 @@ const todoButton = document.querySelector(".todo-button");
 const todoList = document.querySelector(".todo-list");
 const filterOption = document.querySelector(".filter-todo");
 
-//event listeners
+//EVENT LISTENERS
 todoButton.addEventListener("click", addTodo);
 //we will listen to what are we clicking on
 //we will execude a different function when we want to delete an item
 todoList.addEventListener("click", deleteCheck);
 filterOption.addEventListener("click", filterTodo);
 
-//functions
+//FUNCTIONS
 function addTodo(event) {
 	//prevent form from submitting
 	event.preventDefault();
@@ -26,6 +26,9 @@ function addTodo(event) {
 	newTodo.innerText = todoInput.value; //so what's displayed is the input
 	newTodo.classList.add("todo-item");
 	todoDiv.appendChild(newTodo);
+
+	//add todo to localstorage
+	saveLocalTodos(todoInput.value);
 
 	//check mark button
 	const completedButton = document.createElement("button");
