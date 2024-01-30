@@ -4,12 +4,14 @@
 const todoInput = document.querySelector(".todo-input");
 const todoButton = document.querySelector(".todo-button");
 const todoList = document.querySelector(".todo-list");
+const filterOption = document.querySelector(".filter-todo");
 
 //event listeners
 todoButton.addEventListener("click", addTodo);
 //we will listen to what are we clicking on
 //we will execude a different function when we want to delete an item
 todoList.addEventListener("click", deleteCheck);
+filterOption.addEventListener("click", filterTodo);
 
 //functions
 function addTodo(event) {
@@ -64,4 +66,24 @@ function deleteCheck(e) {
 		const todo = item.parentElement;
 		todo.classList.toggle("completed");
 	}
+}
+// handles the select section which todo item we filter
+function filterTodo(e) {
+	const todos =
+		todoList.childNodes; /*https://developer.mozilla.org/en-US/docs/Web/API/Node/childNodes*/
+	//loop through the items to know which ones are which
+	//the value = all/completed/uncompleted
+	todos.forEach(function (todo) {
+		switch (e.target.value) {
+			case "all":
+				todo.style.display = "flex";
+				break;
+			case "completed":
+				if (todo.classList.contains("completed")) {
+					todo.style.display = "flex";
+				} else {
+					todo.style.display = "none";
+				}
+		}
+	});
 }
