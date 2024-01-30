@@ -84,6 +84,14 @@ function filterTodo(e) {
 				} else {
 					todo.style.display = "none";
 				}
+				break;
+			case "uncompleted":
+				if (todo.classList.contains("uncompleted")) {
+					todo.style.display = "flex";
+				} else {
+					todo.style.display = "none";
+				}
+				break;
 		}
 	});
 }
